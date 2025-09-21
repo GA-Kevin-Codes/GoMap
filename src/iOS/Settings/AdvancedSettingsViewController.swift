@@ -36,18 +36,26 @@ class AdvancedSettingsViewController: UITableViewController {
 		sender.resignFirstResponder()
 	}
 
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		let appDelegate = AppDelegate.shared
-		hostname.text = OSM_SERVER.apiURL
-		originalHostname = hostname.text
+        override func viewWillAppear(_ animated: Bool) {
+                super.viewWillAppear(animated)
+                let appDelegate = AppDelegate.shared
+                hostname.text = OSM_SERVER.apiURL
+                originalHostname = hostname.text
 
 		let app = UIApplication.shared as! MyApplication
 		switchFPS.isOn = appDelegate.mapView.automatedFramerateTestActive
 		switchTouches.isOn = app.showTouchCircles
 
-		switchMaxFPS.isOn = UserPrefs.shared.maximizeFrameRate.value ?? false
-	}
+                switchMaxFPS.isOn = UserPrefs.shared.maximizeFrameRate.value ?? false
+        }
+
+        override func viewDidAppear(_ animated: Bool) {
+                super.viewDidAppear(animated)
+
+                if let button = hostnameButton {
+                        TipCoordinator.shared.showAlternateServerTip(from: self, sourceView: button)
+                }
+        }
 
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)

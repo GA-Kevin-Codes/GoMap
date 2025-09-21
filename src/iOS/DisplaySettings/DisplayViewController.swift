@@ -99,10 +99,10 @@ class DisplayViewController: UITableViewController {
 		addButtonPosition.setTitle(title, for: .normal)
 	}
 
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
+        override func viewWillAppear(_ animated: Bool) {
+                super.viewWillAppear(animated)
 
-		guard let mapView = AppDelegate.shared.mapView else { return }
+                guard let mapView = AppDelegate.shared.mapView else { return }
 
 		// becoming visible the first time
 		navigationController?.isNavigationBarHidden = false
@@ -116,8 +116,16 @@ class DisplayViewController: UITableViewController {
 		turnRestrictionSwitch.isOn = mapView.enableTurnRestriction
 		objectFiltersSwitch.isOn = mapView.editorLayer.objectFilters.enableObjectFilters
 
-		setButtonLayoutTitle()
-	}
+                setButtonLayoutTitle()
+        }
+
+        override func viewDidAppear(_ animated: Bool) {
+                super.viewDidAppear(animated)
+
+                TipCoordinator.shared.showGpxTip(from: self, sourceView: gpxLoggingSwitch)
+                TipCoordinator.shared.showQuestsTip(from: self, sourceView: questsSwitch)
+                TipCoordinator.shared.showDataOverlayTip(from: self, sourceView: dataOverlaySwitch)
+        }
 
 	override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell,
 	                        forRowAt indexPath: IndexPath)
