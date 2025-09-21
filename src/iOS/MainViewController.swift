@@ -151,12 +151,22 @@ class MainViewController: UIViewController, UIActionSheetDelegate, UIGestureReco
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 #if USER_MOVABLE_BUTTONS
-		makeMovableButtons()
+                makeMovableButtons()
 #endif
 
-		// this is necessary because we need the frame to be set on the view before we set the previous lat/lon for the view
-		mapView.viewDidAppear()
-	}
+                // this is necessary because we need the frame to be set on the view before we set the previous lat/lon for the view
+                mapView.viewDidAppear()
+
+                TipCoordinator.shared.showLocationTip(from: self, sourceView: locationButton)
+                if let compassButton = mapView.compassButton {
+                        TipCoordinator.shared.showOrientationTip(from: self, sourceView: compassButton)
+                }
+                TipCoordinator.shared.showSearchTip(from: self, sourceView: searchButton)
+                TipCoordinator.shared.showMapLayersTip(from: self, sourceView: displayButton)
+                if let addButton = mapView.addNodeButton {
+                        TipCoordinator.shared.showAddButtonTip(from: self, sourceView: addButton)
+                }
+        }
 
 	func setupAccessibility() {
 		locationButton.accessibilityIdentifier = "location_button"

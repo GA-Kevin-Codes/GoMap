@@ -112,10 +112,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			UserPrefs.shared.copyUserDefaultsToUbiquitousStore()
 		}
 
-		// access the current OSM server to force capabilities download
-		_ = OSM_SERVER
-		return true
-	}
+                // access the current OSM server to force capabilities download
+                _ = OSM_SERVER
+                TipCoordinator.shared.configureIfNeeded()
+                return true
+        }
 
 	static let appName: String = Bundle.main.infoDictionary?["CFBundleDisplayName"] as! String
 

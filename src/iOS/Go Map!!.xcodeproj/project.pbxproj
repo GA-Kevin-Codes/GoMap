@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02008650265B25DC008F37DD /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028816A2265AD9D100C30EA2 /* Database.swift */; };
+               0354E77C7C654DAB8DF44D4C /* TipCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB35F62233DB4E1FA64D3CD7 /* TipCoordinator.swift */; };
+               02008650265B25DC008F37DD /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028816A2265AD9D100C30EA2 /* Database.swift */; };
 		0200C1C22703B42600A79804 /* LocationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0200C1C12703B42600A79804 /* LocationParser.swift */; };
 		0200FECD2908B0EB002C3F94 /* GeoJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0200FECC2908B0EB002C3F94 /* GeoJSON.swift */; };
 		0202C5FE2E3BFD7500649F26 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0202C5FD2E3BFD7500649F26 /* CustomSegmentedControl.swift */; };
@@ -349,7 +350,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0200C1C12703B42600A79804 /* LocationParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationParser.swift; path = ../../Shared/LocationParser.swift; sourceTree = "<group>"; };
+               CB35F62233DB4E1FA64D3CD7 /* TipCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCoordinator.swift; sourceTree = "<group>"; };
+               0200C1C12703B42600A79804 /* LocationParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationParser.swift; path = ../../Shared/LocationParser.swift; sourceTree = "<group>"; };
 		0200FECC2908B0EB002C3F94 /* GeoJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoJSON.swift; sourceTree = "<group>"; };
 		0202C5FD2E3BFD7500649F26 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		0202C5FF2E3C348400649F26 /* ButtonClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonClosure.swift; path = ../../Shared/Utility/ButtonClosure.swift; sourceTree = "<group>"; };
@@ -814,12 +816,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		02ACBA3916713CCB00BB4414 /* Go Map! */ = {
-			isa = PBXGroup;
-			children = (
-				C3D096AB263D48F700E3B129 /* AppDelegate.swift */,
-				ED56E5B226026541000B368C /* BingMetadataViewController.swift */,
-				02F0297A2BFAFF2E002F7956 /* DataOverlays */,
+               02ACBA3916713CCB00BB4414 /* Go Map! */ = {
+                       isa = PBXGroup;
+                       children = (
+                               C3D096AB263D48F700E3B129 /* AppDelegate.swift */,
+                               ED56E5B226026541000B368C /* BingMetadataViewController.swift */,
+                               DACC8F43B3AF433997A49CB9 /* Tips */,
+                               02F0297A2BFAFF2E002F7956 /* DataOverlays */,
 				64D74BF02253DF39004FFD20 /* Direction */,
 				0244399629CA9A28009FC2D0 /* DisplaySettings */,
 				02E9ABBE2BA1502600F0EF69 /* GoogleMaps.secret */,
@@ -846,10 +849,18 @@
 				022114FB2E6CDCF800D76061 /* Turn Restrictions */,
 				647C150D24268DB7008A9366 /* Upload */,
 			);
-			name = "Go Map!";
-			sourceTree = "<group>";
-		};
-		02ACBA3A16713CCB00BB4414 /* Supporting Files */ = {
+                       name = "Go Map!";
+                       sourceTree = "<group>";
+               };
+               DACC8F43B3AF433997A49CB9 /* Tips */ = {
+                       isa = PBXGroup;
+                       children = (
+                               CB35F62233DB4E1FA64D3CD7 /* TipCoordinator.swift */,
+                       );
+                       path = Tips;
+                       sourceTree = "<group>";
+               };
+               02ACBA3A16713CCB00BB4414 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				02AFBF232458C1E700BE43F4 /* BingPlaceholderImage.png */,
@@ -1588,9 +1599,10 @@
 				024909CB267D99190027E531 /* OsmDownloader.swift in Sources */,
 				02696CD52B8EF19400AB70B6 /* HealthKitRoutes.swift in Sources */,
 				02A123EA264C8BA3005638C1 /* TileServerList.swift in Sources */,
-				02CBF3CC2BE8655D000DE2AD /* GpxTrackAttributes.swift in Sources */,
-				C3D096AC263D48F700E3B129 /* AppDelegate.swift in Sources */,
-				023320A22BE07B2000E3311A /* DataOverlayLayer.swift in Sources */,
+                                02CBF3CC2BE8655D000DE2AD /* GpxTrackAttributes.swift in Sources */,
+                                C3D096AC263D48F700E3B129 /* AppDelegate.swift in Sources */,
+                                0354E77C7C654DAB8DF44D4C /* TipCoordinator.swift in Sources */,
+                                023320A22BE07B2000E3311A /* DataOverlayLayer.swift in Sources */,
 				02F2449A264F635800C42E41 /* PathUtil.swift in Sources */,
 				C341E1532639DECC0022E983 /* WikiPage.swift in Sources */,
 				02B5669D294F9D7E00710632 /* MagnifyingGlass.swift in Sources */,
